@@ -17,38 +17,39 @@ class MainApp extends StatelessWidget {
             children: [
               Container(
                 child: const Text("Grade Calculator", 
-                  textScaler: TextScaler.linear(2), 
-                  style: TextStyle(color: Colors.blue),
+                style: TextStyle(color: Colors.blue, fontSize: 28.0),
                 ), 
                 alignment: Alignment.topCenter, 
                 padding: const EdgeInsets.all(8.0),
               ),
               Container(
-                child: const Column(
-                  textDirection: TextDirection.ltr,
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Math: \tA"),
-                    Text("Physics: \tB"),
-                    Text("Chemistry: \tC"),
+                    RichText(text: TextSpan(text: "Math: A")),
+                    RichText(text: TextSpan(text: "Physics: B")),
+                    RichText(text: TextSpan(text: "Chemistry: C")),
                   ],
                 ),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.blue),
                   borderRadius: BorderRadius.circular(10.0)
                 ),
-                padding: const EdgeInsets.all(16.0),
               ),
               Container(
-                child: const Text("calculate", 
-                  textScaler: TextScaler.linear(1), 
-                ), 
-                padding: const EdgeInsets.all(8.0),
-                margin: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              )
+                margin: const EdgeInsets.all(12.0),
+                child: TextButton(
+                  onPressed: (){}, 
+                  child: const Text("calculate", style: TextStyle(color: Colors.white),), 
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      foregroundColor: Colors.blue,
+                      padding: const EdgeInsets.all(32.0),
+                      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)))
+                    ),
+                  )
+              ),
             ],
           )
       ),
